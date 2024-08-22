@@ -21,17 +21,20 @@
 import SlotComp from './SlotComp.vue';
 
 export default {
-   name: 'SlotDemo',
-   components: {
-      SlotComp
-   },
+   
+
    data() {
      return {
        message:'SlotDemo'
      }
    },
+   components: {
+      SlotComp
+   },
    methods: {
     transform(){
+      //在这个地方拿到vue实例  
+      console.log(this.$root);
         this.message = this.message === this.message.toUpperCase()? this.message.toLowerCase() : this.message.toUpperCase();
     }
    }
